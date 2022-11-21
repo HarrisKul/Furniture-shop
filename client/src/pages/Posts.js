@@ -32,19 +32,19 @@ const Posts = () => {
             {alert.message}
           </div>
         )}
-            <h1>Donations</h1>
+            <h1>Our Products</h1>
             {posts.length > 0 && 
             posts.map(post => {
                 console.log(post)
                 return (
                     
-                  <div key={post.id}>
-                    <h1>{post.title}</h1>
-                    <h2>{post.city}</h2>
-                    <img src={post.photo} alt={post.title} />
+                  <div className='products' key={post.id}>
+                    <h2>{post.name}</h2>
+                    <img className='product-img' src={post.photo} alt={post.name} />
                     <p>{post.description}</p>
-                    <p> GOAL: {post.sum} Eu</p>
-                    <button><Link to={'/'}>Donate</Link> </button>
+                    <p> Price: {post.price} Eur
+                    <button className='button'><Link to={'/'}>Order</Link> </button>
+                    </p>
                 </div>
                     
 
