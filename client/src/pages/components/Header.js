@@ -6,9 +6,9 @@ const Header = (props) => {
 
     return (
         <div className="container">
-            <header className="">
+            <div className="header">
             <Link to="/" className="">
-              <img src='https://logos-world.net/wp-content/uploads/2021/03/GoFundMe-Logo-2019-2021.png'></img>
+    
             </Link>
         
             <ul className="nav nav-pills">
@@ -16,7 +16,7 @@ const Header = (props) => {
                     <Link to="/" className="nav-link" aria-current="page">Main</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/posts" className="nav-link" aria-current="page">Fundraise</Link>
+                    <Link to="/posts" className="nav-link" aria-current="page">Our Products</Link>
                 </li>
              
                 {loggedIn ?  (
@@ -43,7 +43,7 @@ const Header = (props) => {
                 </>
                   )}
             </ul>
-            </header>
+            </div>
         </div>
     
     )

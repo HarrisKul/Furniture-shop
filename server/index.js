@@ -4,6 +4,7 @@ import session from 'express-session'
 import database from './database/connect.js'
 import Users from './controller/users.js'
 import Posts from './controller/posts.js'
+import Orders from './controller/orders.js'
 
 
 const app = express()
@@ -34,6 +35,7 @@ app.use(session({
 
 app.use('/api/users/', Users)
 app.use('/api/posts/', Posts)
+app.use('/api/orders/', Orders)
 
 
 //Paleidžiame serverį

@@ -2,27 +2,22 @@ import { DataTypes } from 'sequelize'
 
 const Posts = (sequelize) => {
     const Schema = {
-        title: {
+        name: {
             type: DataTypes.STRING, 
             allowNull: false 
         },
-        city: {
-            type: DataTypes.STRING,
-            allowNull: false
+        description: {
+            type: DataTypes.STRING, 
+            allowNull: false 
         },
         photo: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING, 
             allowNull: false
         },
-        description: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        sum: {
-            type: DataTypes.INTEGER,
+        price: {
+            type: DataTypes.DECIMAL(10, 2), 
             allowNull: false
         }
- 
     }
 
     return sequelize.define('posts', Schema)

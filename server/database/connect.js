@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize'
 import mysql from 'mysql2/promise'
-import {Posts, Users} from '../model/index.js'
+import {Posts, Users, Orders} from '../model/index.js'
 
 
 
@@ -9,7 +9,7 @@ const credentials = {
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'GoFundMe'
+    database: 'Furniture'
 }
 
 try {
@@ -25,15 +25,19 @@ try {
 
     database.Users = Users(sequelize)
     database.Posts = Posts(sequelize)
+    database.Orders = Orders(sequelize)
 
+    database.Users.hasOne(database.Orders)
+    database.Orders.belongsTo(database.Users)
 
-
+    database.Posts.hasOne(database.Orders)
+    database.Orders.belongsTo(database.Posts)
 
 
     await sequelize.sync({ alter: true })
 } catch(error) {
     console.log(error)
-    console.log('Nepavyko prisijungti prie duomenų bazės');
+    console.log('Error connecting to database');
 }
 
 export default database
